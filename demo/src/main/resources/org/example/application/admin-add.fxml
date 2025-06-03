@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.application.AdminAddController"
+      spacing="10"
+      style="-fx-padding: 20; -fx-background-color: #f5f5f5;">
+
+    <Label text="Добавление нового пользователя"
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"
+           alignment="CENTER"/>
+
+    <GridPane vgap="10" hgap="10">
+        <padding>
+            <Insets top="20" />
+        </padding>
+
+        <Label text="Логин:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="loginField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Пароль:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Роль:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <ComboBox fx:id="roleComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <padding>
+            <Insets top="20" />
+        </padding>
+        <Button text="Добавить" 
+                onAction="#handleAdd"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+    </HBox>
+
+    <Label fx:id="messageLabel" 
+           style="-fx-text-fill: red;"
+           alignment="CENTER"
+           maxWidth="Infinity"/>
+</VBox> 

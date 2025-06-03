@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="org.example.application.StudentManagementController" style="-fx-background-color: white;">
+    
+    <HBox alignment="CENTER" style="-fx-background-color: #05326D;" prefHeight="60.0" prefWidth="800.0">
+        <Label text="Управление студентами" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+        </Label>
+    </HBox>
+
+    <VBox alignment="TOP_CENTER" spacing="15" style="-fx-background-color: transparent;">
+        <padding>
+            <Insets top="10" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <HBox spacing="10" alignment="CENTER">
+            <ComboBox fx:id="dormitoryComboBox" promptText="Выберите общежитие" prefWidth="200" style="-fx-font-size: 14.0;"/>
+        </HBox>
+
+        <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS" style="-fx-font-size: 14.0;">
+            <columns>
+                <TableColumn fx:id="fullNameColumn" text="ФИО" prefWidth="200"/>
+                <TableColumn fx:id="groupColumn" text="Группа" prefWidth="100"/>
+                <TableColumn fx:id="facultyColumn" text="Факультет" prefWidth="150"/>
+                <TableColumn fx:id="roomNumberColumn" text="Номер комнаты" prefWidth="150"/>
+                <TableColumn fx:id="checkInDateColumn" text="Дата заселения" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Заселить студента" onAction="#handleCheckIn" 
+                    style="-fx-background-color: #05326D; -fx-text-fill: white; -fx-font-size: 14.0;" prefWidth="200"/>
+            <Button text="Выселить студента" onAction="#handleCheckOut" 
+                    style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D; -fx-font-size: 14.0;" prefWidth="200"/>
+        </HBox>
+
+        <Button text="Назад" onAction="#handleBack" 
+                style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D; -fx-font-size: 14.0;" prefWidth="200"/>
+    </VBox>
+</VBox> 

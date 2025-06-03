@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.application.MainController" style="-fx-background-color: white;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <HBox alignment="CENTER" style="-fx-background-color: #05326D;" prefHeight="60.0" prefWidth="800.0">
+        <Label text="Вход в систему" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+        </Label>
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="15" maxWidth="400">
+        <TextField fx:id="loginField" promptText="Логин" prefWidth="300">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+
+        <PasswordField fx:id="passwordField" promptText="Пароль" prefWidth="300">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </PasswordField>
+
+        <Button onAction="#handleLogin" text="Войти" style="-fx-background-color: #05326D; -fx-text-fill: white;" prefWidth="200">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+
+        <Button onAction="#handleStudentRegistration" text="Регистрация студента" style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D;" prefWidth="200">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+
+        <Label fx:id="messageLabel" textFill="RED">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+    </VBox>
+</VBox>

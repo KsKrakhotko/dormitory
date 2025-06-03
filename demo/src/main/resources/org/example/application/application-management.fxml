@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="org.example.application.ApplicationManagementController"
+      style="-fx-background-color: white;" spacing="20">
+    
+    <HBox style="-fx-background-color: #05326D;" prefHeight="60.0">
+        <Label text="Управление заявлениями" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+            <HBox.margin>
+                <Insets left="20"/>
+            </HBox.margin>
+        </Label>
+    </HBox>
+
+    <VBox spacing="15">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <TableView fx:id="applicationsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="studentColumn" text="Студент" prefWidth="150"/>
+                <TableColumn fx:id="dormitoryColumn" text="Общежитие" prefWidth="150"/>
+                <TableColumn fx:id="dateColumn" text="Дата подачи" prefWidth="150"/>
+                <TableColumn fx:id="roomTypeColumn" text="Тип комнаты" prefWidth="100"/>
+                <TableColumn fx:id="statusColumn" text="Статус" prefWidth="150"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+
+        <TextArea fx:id="commentArea" promptText="Комментарий к решению" prefRowCount="3" wrapText="true">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextArea>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="approveButton" text="Одобрить" onAction="#handleApprove" 
+                    style="-fx-background-color: #05326D; -fx-text-fill: white;" prefWidth="200">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Button>
+            <Button fx:id="rejectButton" text="Отклонить" onAction="#handleReject" 
+                    style="-fx-background-color: #05326D; -fx-text-fill: white;" prefWidth="200">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Button>
+            <Button fx:id="backButton" text="Назад" onAction="#handleBack" 
+                    style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D;" prefWidth="200">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Button>
+        </HBox>
+    </VBox>
+</VBox> 

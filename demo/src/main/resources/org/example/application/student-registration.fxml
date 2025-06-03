@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="org.example.application.StudentRegistrationController" style="-fx-background-color: white;">
+    
+    <HBox alignment="CENTER" style="-fx-background-color: #05326D;" prefHeight="60.0" prefWidth="800.0">
+        <Label text="Регистрация студента" textFill="WHITE" style="-fx-font-size: 24.0; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+        <VBox alignment="TOP_CENTER" spacing="15" style="-fx-background-color: transparent;">
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <GridPane alignment="CENTER" hgap="10" vgap="10" maxWidth="600">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100" prefWidth="150"/>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="200" prefWidth="300"/>
+                </columnConstraints>
+
+                <!-- Данные для входа -->
+                <Label text="Логин:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 14.0;"/>
+                <TextField fx:id="loginField" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-font-size: 14.0;"/>
+
+                <Label text="Пароль:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 14.0;"/>
+                <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-size: 14.0;"/>
+
+                <Label text="Подтверждение:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 14.0;"/>
+                <PasswordField fx:id="confirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 14.0;"/>
+
+                <!-- Личные данные -->
+                <Label text="Фамилия:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-size: 14.0;"/>
+                <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-font-size: 14.0;"/>
+
+                <Label text="Имя:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-font-size: 14.0;"/>
+                <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-font-size: 14.0;"/>
+
+                <Label text="Отчество:" GridPane.columnIndex="0" GridPane.rowIndex="5" style="-fx-font-size: 14.0;"/>
+                <TextField fx:id="middleNameField" GridPane.columnIndex="1" GridPane.rowIndex="5" style="-fx-font-size: 14.0;"/>
+
+                <Label text="Дата рождения:" GridPane.columnIndex="0" GridPane.rowIndex="6" style="-fx-font-size: 14.0;"/>
+                <DatePicker fx:id="birthDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="6" style="-fx-font-size: 14.0;"/>
+
+                <!-- Учебные данные -->
+                <Label text="Факультет:" GridPane.columnIndex="0" GridPane.rowIndex="7" style="-fx-font-size: 14.0;"/>
+                <TextField fx:id="facultyField" GridPane.columnIndex="1" GridPane.rowIndex="7" style="-fx-font-size: 14.0;"/>
+
+                <Label text="Номер группы:" GridPane.columnIndex="0" GridPane.rowIndex="8" style="-fx-font-size: 14.0;"/>
+                <TextField fx:id="groupNumberField" GridPane.columnIndex="1" GridPane.rowIndex="8" style="-fx-font-size: 14.0;"/>
+
+                <Label text="Курс:" GridPane.columnIndex="0" GridPane.rowIndex="9" style="-fx-font-size: 14.0;"/>
+                <ComboBox fx:id="courseComboBox" GridPane.columnIndex="1" GridPane.rowIndex="9" style="-fx-font-size: 14.0;"/>
+            </GridPane>
+
+            <HBox alignment="CENTER" spacing="20">
+                <Button onAction="#handleRegistration" text="Зарегистрироваться" 
+                        style="-fx-background-color: #05326D; -fx-text-fill: white; -fx-font-size: 14.0;" prefWidth="200"/>
+                <Button onAction="#handleCancel" text="Отмена" 
+                        style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D; -fx-font-size: 14.0;" prefWidth="200"/>
+            </HBox>
+
+            <Label fx:id="messageLabel" textFill="RED" wrapText="true" style="-fx-font-size: 14.0;"/>
+        </VBox>
+    </ScrollPane>
+</VBox> 

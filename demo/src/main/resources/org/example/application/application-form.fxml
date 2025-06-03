@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.application.ApplicationFormController"
+      spacing="0"
+      style="-fx-background-color: white;">
+
+    <!-- Заголовок -->
+    <HBox style="-fx-background-color: #05326D;" prefHeight="60.0">
+        <Label text="Подача заявления на заселение" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+            <HBox.margin>
+                <Insets left="20" top="12"/>
+            </HBox.margin>
+        </Label>
+    </HBox>
+
+    <!-- Форма -->
+    <VBox spacing="20" style="-fx-padding: 20;">
+        <GridPane vgap="15" hgap="15">
+            <Label text="Общежитие:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <ComboBox fx:id="dormitoryComboBox" 
+                      GridPane.columnIndex="1" 
+                      GridPane.rowIndex="0"
+                      prefWidth="300"
+                      style="-fx-font-size: 14px;"/>
+
+            <Label text="Тип комнаты:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <ComboBox fx:id="roomTypeComboBox" 
+                      GridPane.columnIndex="1" 
+                      GridPane.rowIndex="1"
+                      prefWidth="300"
+                      style="-fx-font-size: 14px;"/>
+
+            <Label text="Комментарий:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <TextArea fx:id="commentArea" 
+                      GridPane.columnIndex="1" 
+                      GridPane.rowIndex="2"
+                      prefRowCount="3"
+                      wrapText="true"
+                      style="-fx-font-size: 14px;"/>
+        </GridPane>
+
+        <HBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20"/>
+            </padding>
+            <Button text="Подать заявление" 
+                    onAction="#handleSubmit"
+                    style="-fx-background-color: #05326D; -fx-text-fill: white;"
+                    prefWidth="200">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Button>
+            <Button text="Отмена" 
+                    onAction="#handleCancel"
+                    style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D;"
+                    prefWidth="200">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Button>
+        </HBox>
+
+        <Label fx:id="messageLabel" 
+               style="-fx-text-fill: red; -fx-font-size: 14px;"
+               alignment="CENTER"
+               maxWidth="Infinity"/>
+    </VBox>
+</VBox> 

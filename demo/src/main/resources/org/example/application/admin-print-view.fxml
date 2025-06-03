@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox alignment="TOP_CENTER" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="org.example.application.AdminPrintController" style="-fx-background-color: white;"
+      prefWidth="800" prefHeight="600">
+    
+    <HBox alignment="CENTER" style="-fx-background-color: #05326D;" prefHeight="60.0" prefWidth="800.0">
+        <Label text="Список пользователей" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+        </Label>
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="15" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <TableView fx:id="userTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn text="Login" prefWidth="160">
+                    <cellValueFactory><PropertyValueFactory property="login"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Hash" prefWidth="160">
+                    <cellValueFactory><PropertyValueFactory property="password"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Salt" prefWidth="160">
+                    <cellValueFactory><PropertyValueFactory property="salt"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Access" prefWidth="160">
+                    <cellValueFactory><PropertyValueFactory property="access"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Role" prefWidth="160">
+                    <cellValueFactory><PropertyValueFactory property="role"/></cellValueFactory>
+                </TableColumn>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Назад" onAction="#handleBack" 
+                    style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D;" prefWidth="200">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Button>
+        </HBox>
+    </VBox>
+</VBox>

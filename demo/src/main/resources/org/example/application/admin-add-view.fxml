@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="org.example.application.AdminAddController" 
+      style="-fx-background-color: white;" spacing="20">
+    
+    <HBox style="-fx-background-color: #05326D;" prefHeight="60.0">
+        <Label text="Добавление нового пользователя" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+            <HBox.margin>
+                <Insets left="20"/>
+            </HBox.margin>
+        </Label>
+    </HBox>
+
+    <VBox spacing="15">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <GridPane hgap="10" vgap="10">
+            <Label text="Логин:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </TextField>
+
+            <Label text="Пароль:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </TextField>
+
+            <Label text="Роль:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <ComboBox fx:id="roleComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="ADMIN"/>
+                        <String fx:value="COMMANDANT"/>
+                        <String fx:value="STUDENT"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Label text="Доступ:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <ComboBox fx:id="accessComboBox" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="true"/>
+                        <String fx:value="false"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </GridPane>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="createButton" text="Создать" onAction="#handleCreateUser" 
+                    style="-fx-background-color: #05326D; -fx-text-fill: white;" prefWidth="200">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Button>
+            <Button fx:id="buttonBack" text="Назад" onAction="#handleBack" 
+                    style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D;" prefWidth="200">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Button>
+        </HBox>
+    </VBox>
+</VBox>

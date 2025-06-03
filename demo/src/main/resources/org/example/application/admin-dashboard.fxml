@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" spacing="20" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.application.AdminDashboardController">
+    
+    <HBox alignment="CENTER" prefHeight="60.0" prefWidth="800.0" style="-fx-background-color: #05326D;">
+        <Label text="Панель администратора" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="15" style="-fx-background-color: transparent;">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+
+        <VBox alignment="CENTER" maxWidth="400" spacing="15">
+            <Button onAction="#handleUserManagement" prefHeight="40" prefWidth="300" style="-fx-background-color: #05326D; -fx-text-fill: white;" text="Управление пользователями">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Button onAction="#handleDormitoryManagement" prefHeight="40" prefWidth="300" style="-fx-background-color: #05326D; -fx-text-fill: white;" text="Управление общежитиями">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Button onAction="#handleApplications" prefHeight="40" prefWidth="300" style="-fx-background-color: #05326D; -fx-text-fill: white;" text="Управление заявлениями">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Button onAction="#handleReports" prefHeight="40" prefWidth="300" style="-fx-background-color: #05326D; -fx-text-fill: white;" text="Работа с отчётами">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Button onAction="#handleLogout" prefHeight="40" prefWidth="300" style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D;" text="Выйти">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </VBox>
+    </VBox>
+</VBox>

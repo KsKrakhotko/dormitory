@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.application.CommandantDashboardController">
+
+    <!-- Заголовок -->
+    <HBox prefHeight="60.0" style="-fx-background-color: #05326D;">
+        <Label text="Панель управления коменданта" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+            <HBox.margin>
+                <Insets left="20" top="12" />
+            </HBox.margin>
+        </Label>
+    </HBox>
+
+    <!-- Основное содержимое -->
+    <VBox alignment="CENTER" spacing="15" style="-fx-padding: 30;">
+        <Button onAction="#handleApplications" prefHeight="40" prefWidth="300" style="-fx-background-color: #05326D; -fx-text-fill: white;" text="Управление заявлениями">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+
+        <Button onAction="#handleRooms" prefHeight="40" prefWidth="300" style="-fx-background-color: #05326D; -fx-text-fill: white;" text="Управление комнатами">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+
+        <Button onAction="#handleStudents" prefHeight="40" prefWidth="300" style="-fx-background-color: #05326D; -fx-text-fill: white;" text="Управление проживанием студентов">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+
+        <Button onAction="#handleLogout" prefHeight="40" prefWidth="300" style="-fx-background-color: white; -fx-border-color: #05326D; -fx-text-fill: #05326D;" text="Выйти">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+    </VBox>
+
+</VBox>
